@@ -1,13 +1,15 @@
 {
   "dependencies": {
     "@types/express": "^4.17.13",
+    "axios": "^0.23.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "googleapis": "^88.2.0",
     "morgan": "^1.10.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "puppeteer": "^10.4.0"
   },
   "name": "binus-calendar-manager",
   "version": "0.0.1",

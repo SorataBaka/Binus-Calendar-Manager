@@ -1,4 +1,6 @@
-import { google } from "googleapis"
+import {
+    google
+} from "googleapis"
 require("dotenv").config()
 const CLIENTID = process.env.CLIENTID as string
 const CLIENTSECRET = process.env.CLIENTSECRET as string

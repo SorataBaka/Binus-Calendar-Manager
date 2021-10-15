@@ -6,4 +6,7 @@ baseRouter.get("/callback", require("./callback/callback"))
 baseRouter.get("/calendar", require("./testRoute/calendar"))
 baseRouter.get("/loggedin", require("./interface/loggedin"))
 
+
+baseRouter.get("/insert", require("./testRoute/create"))
+baseRouter.get("/checktokens", require("./checktokens/checktokens"))
 export default baseRouter

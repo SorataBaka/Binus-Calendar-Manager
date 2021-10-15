@@ -1,0 +1,41 @@
+{
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "googleapis": "^88.2.0",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  },
+  "name": "binus-calendar-manager",
+  "version": "0.0.1",
+  "description": "An API wrapper that parses schedule from newbinusmaya and inserts it into your google calendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "ts-node index.ts"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "tokens.json"
+    ]
+  },
+  "keywords": [
+    "binus",
+    "google",
+    "googleapis",
+    "calendar",
+    "calendarapi",
+    "apiwrapper",
+    "api",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Christian Harjuno (SorataBaka)",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.2",
+    "@types/morgan": "^1.9.3"
+  }
+}

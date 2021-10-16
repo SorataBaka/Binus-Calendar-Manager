@@ -12,8 +12,6 @@ baseRouter.get("/google/createnewcalendar", require("./google/createcalendar"))
 
 
 //Test routes
-baseRouter.get("/test/insert", require("./testRoute/create"))
 baseRouter.get("/test/calendar", require("./testRoute/calendar"))
 baseRouter.get("/test/getschedule", require("./testRoute/getschedule"))
-baseRouter.get("/test/test", require("./testRoute/test"))
 export default baseRouter

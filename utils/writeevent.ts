@@ -10,8 +10,8 @@ export interface WriteParameters {
 
 const writeEvent = async(PARAMETER:WriteParameters) => {
     var color = Math.floor(Math.random() * 11).toString()
-    await google.calendar.events.insert({
-        calendarId:"primary",
+    const createEvent = await google.calendar.events.insert({
+        calendarId: PARAMETER.calendarId,
         requestBody: {
             end: {
                 dateTime: PARAMETER.endTime,
@@ -31,5 +31,6 @@ const writeEvent = async(PARAMETER:WriteParameters) => {
         console.log(err)
         return err
     })
+    return createEvent
 }
 export default writeEvent

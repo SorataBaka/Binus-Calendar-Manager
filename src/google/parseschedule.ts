@@ -8,18 +8,11 @@ import writeEvent, {
     WriteParameters
 } from "../../utils/writeevent"
 module.exports = async (req: Request, res: Response) => {
-    const {
-        year,
-        month,
-        day,
-        calendarID
-    } = req.query
-    const {
-        tokens
-    } = req.cookies
+    const { year, month, day, calendarID } = req.query
+    const { tokens } = req.cookies
     if (!tokens) return res.status(400).redirect(`/checktokens?redirect_uri=${req.originalUrl}`)
     google.oauthClient.setCredentials(tokens)
-    if (!year || !month || !day) return res.status(400).json({
+    if (!year || !month || !day || !calendarID) return res.status(400).json({
         Status: 200,
         Message: "Invalid query"
     })
@@ -33,15 +26,7 @@ module.exports = async (req: Request, res: Response) => {
     for (const daily of scheduleArray) {
         const dailySchedule = daily.Schedule
         for (const schedules of dailySchedule) {
-            const {
-                dateStart,
-                dateEnd,
-                title,
-                content,
-                scheduleType,
-                customParam,
-                deliveryModeDesc
-            } = schedules
+            const { dateStart, dateEnd, title, content, scheduleType, customParam, deliveryModeDesc } = schedules
             const verificationString = `${content} ${customParam.sessionNumber} ${title}`
             if (testedSchedule.indexOf(verificationString) == -1) {
                 console.log(testedSchedule.indexOf(verificationString))
@@ -60,6 +45,7 @@ module.exports = async (req: Request, res: Response) => {
                         err
                     })
                 })
+                console.log(writtenEvent)
                 finishedWrite.push(writtenEvent)
                 testedSchedule.push(verificationString)
             }
